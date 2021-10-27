@@ -17,8 +17,8 @@ jobs:
     - name: Login dockerhub
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag wr0903/gradingservice:$(date +%s)
+      run: docker build . --file Dockerfile --tag wr0903/gradingservice:latest
     - name: Push the Docker image
-      run: docker push wr0903/gradingservice:$(date +%s)
+      run: docker push wr0903/gradingservice:latest
     - name: Logout dockerhub
       run: docker logout
